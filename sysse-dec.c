@@ -139,7 +139,7 @@ bool writeWav(FILE *out, int16_t *data, int channels, int samplerate, int sample
 
 	struct WavData dataHeader = {
 		"data",
-		samplerate * sizeof(int16_t)
+		samples * sizeof(int16_t)
 	};
 
 	if (fwrite(&header, sizeof(header), 1, out) != 1) { return false; }
