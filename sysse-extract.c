@@ -54,7 +54,7 @@ int main(int argc, char const *argv[]) {
 		struct Entry *entry = &entries[i];
 		buffer = realloc(buffer, entry->size);
 		strncpy(outFileWrite, entry->name, (ENTRY_NAME_LEN + 1));
-		printf("%s: offset %d size %d\n", outFileWrite, entry->offset, entry->size);
+		strcpy(outFileWrite + strlen(outFileWrite), ".bin");
 		fseek(inFile, entry->offset, SEEK_SET);
 		if (1 != fread(buffer, entry->size, 1, inFile)) {
 			fprintf(stderr, "Failed to read %s from %s\n", outFileWrite, inFileName);
