@@ -43,8 +43,8 @@ void decode(uint8_t *in, int16_t *out, size_t length, size_t channels) {
 struct Header {
 	char magic[4];
 	int size;
-	short channels;
-	short samplerate;
+	uint16_t channels;
+	uint16_t samplerate;
 	int unk;
 };
 
